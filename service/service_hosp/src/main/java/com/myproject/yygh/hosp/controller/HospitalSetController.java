@@ -2,7 +2,6 @@ package com.myproject.yygh.hosp.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.myproject.yygh.common.exception.YyghException;
 import com.myproject.yygh.common.result.Result;
 import com.myproject.yygh.common.utils.MD5;
 import com.myproject.yygh.hosp.service.HospitalSetService;
@@ -20,6 +19,7 @@ import java.util.Random;
 @Api(tags = "医院设置管理")
 @RestController
 @RequestMapping("/admin/hosp/hospitalSet")
+@CrossOrigin
 public class HospitalSetController {
     //注入service
     @Autowired
@@ -66,6 +66,7 @@ public class HospitalSetController {
 
         //调用方法实现分页查询
         Page<HospitalSet> pageHopsitalSet = hospitalSetService.page(page,wrapper);
+        System.out.println(pageHopsitalSet);
         return Result.ok(pageHopsitalSet);
 
     }
@@ -87,7 +88,6 @@ public class HospitalSetController {
             return Result.fail();
         }
     }
-
     //5.根据id获取医院设置
     @GetMapping("getHospSet/{id}")
     public Result getHospSet(@PathVariable Long id){
