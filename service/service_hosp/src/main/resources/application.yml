@@ -12,14 +12,17 @@ spring:
   # mysql数据库连接
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.1.224:3306/yygh_hosp?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://192.168.50.224:3306/yygh_hosp?characterEncoding=utf-8&useSSL=false
     username: root
     password: 123456
   #返回json的全局时间格式
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
-
+  data:
+    mongodb:
+      uri: mongodb://192.168.50.224:27017/yygh_hosp
+      auto-index-creation: false
 # 设置日志级别
 logging:
   level:

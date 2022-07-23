@@ -6,6 +6,8 @@
         <module>common</module>
         <module>service</module>
         <module>model</module>
+        <module>hospital_manage</module>
+        <module>hospital_manage</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
