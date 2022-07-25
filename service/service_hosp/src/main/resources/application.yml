@@ -23,6 +23,12 @@ spring:
     mongodb:
       uri: mongodb://192.168.50.224:27017/yygh_hosp
       auto-index-creation: false
+  cloud:
+    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+      server-addr: 127.0.0.1:8848
+
 # 设置日志级别
 logging:
   level:

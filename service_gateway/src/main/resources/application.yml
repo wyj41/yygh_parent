@@ -1,0 +1,27 @@
+# \u670D\u52A1\u7AEF\u53E3
+server:
+  port: 81
+
+spring:
+  application:
+    name: service-gateway # \u670D\u52A1\u540D
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848 # nacos\u670D\u52A1\u5730\u5740
+    gateway:
+      discovery:
+        locator:
+          enabled: true # \u4F7F\u7528\u670D\u52A1\u53D1\u73B0\u8DEF\u7531
+      routes:
+        - id: service-hosp # \u8BBE\u7F6E\u8DEF\u7531id
+          uri: lb://service-hosp # \u8BBE\u7F6E\u8DEF\u7531uri
+          predicates: #\u8BBE\u7F6E\u8DEF\u7531\u65AD\u8A00
+            - name: Path
+              args:
+                - /*/hosp/**
+        - id: service-cmn
+          uri: lb://service-cmn
+          predicates:
+            - name: Path
+              args:
+                - /*/cmn/**

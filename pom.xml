@@ -8,6 +8,9 @@
         <module>model</module>
         <module>hospital_manage</module>
         <module>hospital_manage</module>
+        <module>service_client</module>
+        <module>service_client/service_cmn_client</module>
+        <module>service_gateway</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
