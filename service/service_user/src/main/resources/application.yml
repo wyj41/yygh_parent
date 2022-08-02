@@ -1,0 +1,46 @@
+#服务端口
+server:
+  port: 8160
+
+spring:
+  application:
+    name: service-user # 服务名
+  profiles:
+    active: dev # 环境设置：dev、test、prod
+  # mysql数据库连接
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.50.224/yygh_user?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+  #返回json的全局时间格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  # nacos服务地址
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+  redis:
+    host: 192.168.50.224
+    port: 6379
+    database: 0
+    timeout: 1800000
+    lettuce:
+      pool:
+        max-active: 10
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+
+#配置mapper xml文件的路径
+mybatis-plus:
+  mapper-locations: classpath:com/myproject/yygh/user/mapper/xml/*.xml
+
+wx:
+  open:
+    app_id: wxed9954c01bb89b47
+    app_secret: a7482517235173ddb4083788de60b90e
+    redirect_url: http://localhost:8160/api/ucenter/wx/callback
+yygh:
+  baseUrl: http://localhost:3000
