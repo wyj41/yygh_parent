@@ -38,3 +38,9 @@ spring:
             - name: Path
               args:
                 - /*/msm/**
+        - id: service-oss
+          uri: lb://service-oss
+          predicates:
+            - name: Path
+              args:
+                - /*/oss/**
