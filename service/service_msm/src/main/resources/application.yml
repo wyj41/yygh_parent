@@ -27,4 +27,8 @@ aliyun:
   sms:
     regionId: default
     accessKeyId: ***
+<<<<<<< HEAD
     secret: ***
+=======
+    secret: ***
+>>>>>>> 0abb29afbb960d45aaa5bcc1c6b1a050e0e10207
