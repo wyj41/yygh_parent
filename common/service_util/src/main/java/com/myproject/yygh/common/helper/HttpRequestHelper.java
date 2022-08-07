@@ -46,12 +46,6 @@ public class HttpRequestHelper {
         if(paramMap.containsKey("sign")) {
             paramMap.remove("sign");
         }
-        TreeMap<String, Object> sorted = new TreeMap<>(paramMap);
-        StringBuilder str = new StringBuilder();
-        for (Map.Entry<String, Object> param : sorted.entrySet()) {
-            str.append(param.getValue()).append("|");
-        }
-        str.append(signKey);
         log.info("加密前：" + signKey.toString());
         String md5Str = MD5.encrypt(signKey.toString());
         log.info("加密后：" + md5Str);

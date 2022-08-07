@@ -44,3 +44,15 @@ spring:
             - name: Path
               args:
                 - /*/oss/**
+        - id: service-order
+          uri: lb://service-order
+          predicates:
+            - name: Path
+              args:
+                - /*/order/**
+        - id: service-statistics
+          uri: lb://service-statistics
+          predicates:
+            - name: Path
+              args:
+                - /*/statistics/**

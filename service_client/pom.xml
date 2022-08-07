@@ -9,6 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
+    <modules>
+        <module>service_hosp_client</module>
+        <module>service_order_client</module>
+    </modules>
 
     <artifactId>service_client</artifactId>
 

@@ -22,13 +22,14 @@ spring:
   cloud:
     nacos:
       server-addr: 127.0.0.1:8848
+  rabbitmq:
+    host: 192.168.50.224
+    port: 5672
+    username: admin
+    password: admin
 
 aliyun:
   sms:
     regionId: default
     accessKeyId: ***
-<<<<<<< HEAD
     secret: ***
-=======
-    secret: ***
->>>>>>> 0abb29afbb960d45aaa5bcc1c6b1a050e0e10207

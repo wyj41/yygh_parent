@@ -16,6 +16,13 @@ public class PatientApiController {
     @Autowired
     private PatientService patientService;
 
+    //根据就诊人id获取就诊人信息
+    @GetMapping("inner/get/{id}")
+    public Patient getPatientOrder(@PathVariable Long id){
+        Patient patient = patientService.getPatientById(id);
+        return patient;
+    }
+
     //获取就诊人列表
     @GetMapping("auth/findAll")
     public Result findAll(HttpServletRequest request){

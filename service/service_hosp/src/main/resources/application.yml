@@ -25,9 +25,12 @@ spring:
       auto-index-creation: false
   cloud:
     nacos:
-#      discovery:
-#        server-addr: 127.0.0.1:8848
       server-addr: 127.0.0.1:8848
+  rabbitmq:
+    host: 192.168.50.224
+    port: 5672
+    username: admin
+    password: admin
 
 # 设置日志级别
 logging:

@@ -128,11 +128,17 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     //根据科室编号和医院编号查询科室名称
     @Override
-    public Object getDepName(String hoscode, String depcode) {
+    public String getDepName(String hoscode, String depcode) {
         Department department = departmentRepository.getDepartmentByHoscodeAndDepcode(hoscode, depcode);
         if(department != null){
             return department.getDepname();
         }
         return null;
+    }
+
+    //根据科室编号和医院编号，查询科室
+    @Override
+    public Department getDepartment(String hoscode, String depcode) {
+        return departmentRepository.getDepartmentByHoscodeAndDepcode(hoscode,depcode);
     }
 }

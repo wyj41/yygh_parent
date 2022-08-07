@@ -86,6 +86,9 @@ public class DictServiceImpl extends ServiceImpl<DictMapper, Dict> implements Di
             QueryWrapper<Dict> wrapper = new QueryWrapper<>();
             wrapper.eq("value",value);
             Dict dict = baseMapper.selectOne(wrapper);
+            if(dict == null){
+                return null;
+            }
             return dict.getName();
         }else{//如果dictCode非空，根据dictCode和value查询
             //根据dictcode查询dict对象，得到dict的id值

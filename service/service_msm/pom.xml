@@ -12,6 +12,12 @@
     <artifactId>service_msm</artifactId>
     <dependencies>
         <dependency>
+            <groupId>com.myproject</groupId>
+            <artifactId>rabbit_util</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.aliyun</groupId>
             <artifactId>aliyun-java-sdk-core</artifactId>
         </dependency>
